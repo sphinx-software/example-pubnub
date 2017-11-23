@@ -15,7 +15,6 @@ let i = 1;
 let looper = setInterval(() => {
     i++;
     let data = RandomData.makeRandomData(new Date(), new Date());
-    console.log(data);
     pubnub.publish({
         channel: 'sampleChannel',
         message: data
@@ -27,12 +26,22 @@ let looper = setInterval(() => {
 }, 5000);
 
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
     res.json({
         server: 'Example Pubnub',
         version: '1.0'
     })
+});
+
+/* GET AJAX API. */
+router.get('/ajax-example', (req, res, next) => {
+  let exampleData = [];
+
+  for (let i = 0; i < 100; i++) {
+    let data = RandomData.makeRandomData(new Date(), new Date());
+    exampleData.push(data)
+  }
+  res.json(exampleData)
 });
 
 module.exports = router;

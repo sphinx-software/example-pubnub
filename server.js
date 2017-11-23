@@ -5,11 +5,13 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routesApi = require('./routes');
 const port = 8000;
+const cors = require('cors');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(cors());
 
 app.use(routesApi);
 
@@ -34,5 +36,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(port, () => {
-    console.log('We are live on ' + port);
+    console.log(`We are live on http://localhost:${port}/`);
 });
