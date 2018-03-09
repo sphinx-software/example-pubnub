@@ -5,9 +5,9 @@ let PubNub = require('pubnub');
 let RandomData = require('../data/RandomData');
 let pubnub = new PubNub({
     ssl: true,
-    publishKey: 'pub-c-d38647d3-7a56-4e35-83b5-166917dae32e',
-    subscribeKey: 'sub-c-0762c92e-742e-11e6-92a0-02ee2ddab7fe',
-    secretKey: 'sec-c-Mzc1MGU0NmUtMDA3OS00MTZiLWI4YjQtYmUzNGE2ZmQ1Mjll'
+    publishKey: 'pub-c-3fce0b13-4d9b-41ba-9608-bd2d0842cdae',
+    subscribeKey: 'sub-c-688c1d5e-2350-11e8-a183-761142583d66',
+    secretKey: 'sec-c-NTk3MDA4MjEtNWY3ZC00MzM4LWFjOTItMjFjNDY2MTU4NzNk'
 });
 
 let i = 1;
